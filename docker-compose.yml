@@ -1,0 +1,14 @@
+version: "3.8"
+services:
+  westonal-desktop:
+    container_name: westonal-desktop
+    build:
+      context: .
+    # volumes:
+      # - ./shared:/home/your_username # shared folder
+    # security_opt:
+      # - seccomp:unconfined # for launching chromium browser without --no-sandbox option
+    # shm_size: "2gb" optional, needed to run some heavy programs e.g. browser 
+    restart: unless-stopped
+    ports:
+      - 3389:3389
